@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -7,36 +7,44 @@ import {
   View,
   ScrollView,
   TextInput,
+  Button,
+  TouchableHighlight,
 } from "react-native";
 
-export default function App() {
+export default function ButtonPress() {
   return (
-    <ScrollView>
-      <Text>Some text</Text>
-      <View>
-        <Text>Some more text</Text>
-        <Image
-          source={{ uri: "https://reactnative.dev/docs/assets/p_cat1.png" }}
-          style={{ width: 200, height: 200 }}
+    <View style={styles.container}>
+      <View style={styles.take}>
+        <Button
+          onPress={() => {
+            alert("You pressed the Take button!");
+          }}
+          title="Take"
         />
       </View>
-      <TextInput
-        style={{
-          height: 40,
-          borderColor: "gray",
-          borderWidth: 1,
-        }}
-        defaultValue="You can type in me"
-      />
-    </ScrollView>
+      <View style={styles.give}>
+        <Button
+          onPress={() => {
+            alert("You pressed the Give button!");
+          }}
+          title="Give"
+        />
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#fdfd96",
     alignItems: "center",
     justifyContent: "center",
+  },
+  take: {
+    backgroundColor: "#fff",
+  },
+  give: {
+    backgroundColor: "#000",
   },
 });

@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   give: {
-    backgroundColor: "#000",
+    backgroundColor: "lightgray",
   },
 });
